@@ -49,4 +49,23 @@ public class Vetor {
 
         return s.toString();
     }
+
+    public String exibeElemento(int elemento) {
+        if (elemento < 0 || elemento > tamanho ) {
+            throw new IllegalArgumentException("Indice inválido");
+        }
+
+        return this.elementos[elemento];
+    }
+
+    public boolean elementoExiste(String elemento) {
+        boolean existe = false;
+        for (String elementoUnico : this.elementos) {
+            if (elementoUnico == elemento) {
+                existe = true;
+            }
+        }
+
+        return existe;
+    }
 }
