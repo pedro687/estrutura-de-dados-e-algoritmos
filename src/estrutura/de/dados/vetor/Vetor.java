@@ -20,6 +20,7 @@ public class Vetor {
     }*/
 
     public void adiciona(String elemento) throws Exception{
+        aumentaCapacidade();
         if (this.tamanho < this.elementos.length){
             this.elementos[tamanho] = elemento;
             this.tamanho++;
@@ -67,5 +68,17 @@ public class Vetor {
         }
 
         return existe;
+    }
+
+    private void aumentaCapacidade() {
+        if (this.elementos.length == tamanho) {
+
+            var novoVetor = new String[this.elementos.length * 2];
+            for (int i = 0; i < this.elementos.length; i++) {
+                novoVetor[i] = this.elementos[i];
+            }
+
+            this.elementos = novoVetor;
+        }
     }
 }
