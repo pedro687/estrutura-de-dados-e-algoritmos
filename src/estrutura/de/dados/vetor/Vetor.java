@@ -81,4 +81,12 @@ public class Vetor {
             this.elementos = novoVetor;
         }
     }
+
+    public void addElementoEmPosicao(String elemento, int posicao) {
+        for (int i = tamanho-1; i >= posicao; i--) {
+            this.elementos[i+1] = this.elementos[i];
+        }
+        this.elementos[posicao] = elemento;
+        tamanho++;
+    }
 }
